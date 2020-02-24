@@ -1,0 +1,66 @@
+@import "../../styles/variables.scss";
+
+.article--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 2rem;
+  color: $base-color;
+
+  @media (min-width: $screen-md-min) {
+    width: 400px;
+    padding: 0 2% 0 2%;
+    height: 10%;
+  }
+
+
+  .article--image{
+    width: 100%;
+    height: 200px;
+  }
+
+  .article--title{
+    display: block;
+    font-family: $article-heading-family;
+    text-align: justify;
+    font-size: $article-heading-size;
+    width: 100%;
+
+    @media (min-width: $screen-md-min){
+      height: 50px;
+    }
+  }
+
+  .article--description {
+    font-family: $base-family;
+    font-size: $base-size;
+    text-align: justify;
+    margin-top: 15px;
+    @media (min-width: $screen-md-min){
+      height: 80px;
+    }
+  }
+
+  .article--source, .article--author{
+    max-width: 50%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .article--date{
+    margin-top: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    height: 25px;
+  }
+  
+  .row--container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

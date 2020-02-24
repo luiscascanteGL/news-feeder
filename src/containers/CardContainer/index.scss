@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form--container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  font-family: $base-family;
+  font-size: $base-size;
+ 
+  @media (min-width: $screen-md-min){
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form--group {
+    display: flex;
+
+    label {
+      padding: 2px 5px 2px 5px;
+    }
+
+    input, select {
+      margin-left: 5px;
+      border: 2px solid grey;
+      padding: 2px 5px 2px 5px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.card--list{
+  padding: 2% 5% 2% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: $screen-md-min) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
