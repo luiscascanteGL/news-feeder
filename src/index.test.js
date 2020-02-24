@@ -12,8 +12,15 @@ import thunk from "redux-thunk"
 const store = createStore(reducer, applyMiddleware(thunk))
 
 describe('App', () => {
+
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<Provider store={store}><App /></Provider>);
+  });
+
+  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
   it('should render a Card Container', () => {
-    const wrapper = shallow(<Provider store={store}><App /></Provider>);
     expect(wrapper.containsMatchingElement(<CardContainer />));
   })
 

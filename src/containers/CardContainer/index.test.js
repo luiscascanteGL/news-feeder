@@ -18,6 +18,8 @@ describe('Card Container', () => {
     wrapper = mount(<Provider store={store}><CardContainer /></Provider>)
   });
 
+  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
+
   it('Should render a <div/>', () => {
     expect(wrapper.first('div').length).toEqual(1);
   })

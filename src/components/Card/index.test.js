@@ -23,6 +23,8 @@ describe('Card Component', () => {
     wrapper = shallow(<CardComponent article={article} />);
   });
 
+  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
+
   it('Should render a <a/>', () => {
     expect(wrapper.find('a').length).toEqual(1);
   });
