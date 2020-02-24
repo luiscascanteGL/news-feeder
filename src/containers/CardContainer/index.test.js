@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import CardContainer from "./index";
-import CardComponent from "../../components/Card";
 
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -18,6 +17,7 @@ describe('Card Container', () => {
   beforeEach(() => {
     wrapper = mount(<Provider store={store}><CardContainer /></Provider>)
   });
+
   it('Should render a <div/>', () => {
     expect(wrapper.first('div').length).toEqual(1);
   })
@@ -32,5 +32,9 @@ describe('Card Container', () => {
 
   it('Should render a <select/>', () => {
     expect(wrapper.find('select').length).toEqual(1);
+  })
+
+  it('Should render two <label/>', () => {
+    expect(wrapper.find('label').length).toEqual(2);
   })
 })

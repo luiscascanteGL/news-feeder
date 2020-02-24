@@ -9,7 +9,6 @@ const CardComponent = ({ article }) => {
 
   return (
     <a href={url} className="article--card">
-
       <h2 className="article--title">{title.substring(0, title.indexOf("-"))}</h2>
       <time className="article--date" dateTime={publishedAt}>{`${daysOfWeek[publishDate.getMonth()]} ${publishDate.getDate()}, ${publishDate.getFullYear()}`}</time>
 
@@ -17,10 +16,9 @@ const CardComponent = ({ article }) => {
       <img className="article--image" src={urlToImage} alt="" />
       <address className="row--container">
         <strong className="article--source">{source.name}</strong>
-        {author && <p className="article--author"><em >By {author}</em></p>}
+        {author && <em className="article--author">By {author}</em>}
       </address>
       <p className="article--description">{description}</p>
-
     </a >
   )
 }
