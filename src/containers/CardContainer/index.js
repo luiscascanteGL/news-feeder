@@ -102,13 +102,12 @@ export const CardContainer = ({ isFetching, articles, fetchArticles }) => {
     <div className="container">
       <form className="form--container" onSubmit={handleSubmit}>
         <div className="form--group">
-          <label htmlFor="keyword">Search by keyword: </label>
-          <input name="keyword" id="keyword" placeholder="Type a keyword..." type="text" value={searchText} onChange={handleTextChange} />
+          <label htmlFor="sources">Filter by</label>
+          <select name="sources" id="sources" onChange={handleSourceChange}><option value="">All</option>{sources}</select>
         </div>
-
         <div className="form--group">
-          <label htmlFor="sources">Filter by sources: </label>
-          <select name="sources" id="sources" onChange={handleSourceChange}><option value="">Select a source</option>{sources}</select>
+          <label htmlFor="keyword">Search</label>
+          <input name="keyword" id="keyword" placeholder="Type a keyword..." type="text" value={searchText} onChange={handleTextChange} />
         </div>
       </form>
       <div className="card--list">
