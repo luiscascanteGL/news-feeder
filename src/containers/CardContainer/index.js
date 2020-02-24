@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import { fetchArticles } from "../../actions"
-import CardComponent from "../../components/Card"
+import { fetchArticles } from "../../actions";
+import CardComponent from "../../components/Card";
 
 import "./index.scss";
 
@@ -129,6 +130,12 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchArticles: (page) => dispatch(fetchArticles(page))
   }
+}
+
+CardContainer.propTypes = {
+  isFetching: PropTypes.bool,
+  articles: PropTypes.array,
+  fetchArticles: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
