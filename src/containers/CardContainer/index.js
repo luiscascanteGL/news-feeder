@@ -6,7 +6,7 @@ import CardComponent from "../../components/Card";
 
 import "./index.scss";
 
-const CardContainer = ({ isFetching, articles, fetchArticles }) => {
+export const CardContainer = ({ isFetching, articles, fetchArticles }) => {
 
   const [searchText, setSearchText] = useState("");
   const [selectedSource, setSelectedSource] = useState("");
@@ -102,12 +102,12 @@ const CardContainer = ({ isFetching, articles, fetchArticles }) => {
     <div className="container">
       <form className="form--container" onSubmit={handleSubmit}>
         <div className="form--group">
-          <label for="keyword">Search by keyword: </label>
+          <label htmlFor="keyword">Search by keyword: </label>
           <input name="keyword" id="keyword" placeholder="Type a keyword..." type="text" value={searchText} onChange={handleTextChange} />
         </div>
 
         <div className="form--group">
-          <label for="sources">Filter by sources: </label>
+          <label htmlFor="sources">Filter by sources: </label>
           <select name="sources" id="sources" onChange={handleSourceChange}><option value="">Select a source</option>{sources}</select>
         </div>
       </form>
