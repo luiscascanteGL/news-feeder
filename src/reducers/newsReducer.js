@@ -14,7 +14,7 @@ const newsReducer = (state = initialState, { type, payload }) => {
       })
 
     case RECEIVE_ARTICLES:
-      const newArticles = state.articles.concat(payload);
+      const newArticles = [... new Set(state.articles.concat(payload))];
       return Object.assign({}, state, {
         isFetching: false,
         articles: newArticles

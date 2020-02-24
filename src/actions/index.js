@@ -25,6 +25,7 @@ export const failedRequest = () => {
 }
 
 export const fetchArticles = (page) => {
+  console.log(page);
   return async dispatch => {
     dispatch(requestArticles());
     try {
